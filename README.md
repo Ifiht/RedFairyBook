@@ -12,3 +12,4 @@ holly.set("oak", "on fire")
 holly.get("oak")  #=> returns: "on fire"
 holly.save  # writes changes to file
 ```
+_Calling RedFairy.new() will restore any previous save, as long as you use the same string as before._
