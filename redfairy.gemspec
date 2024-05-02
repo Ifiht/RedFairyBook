@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name = "redfairy"
-  s.version = "0.0.0"
+  s.version = "0.0.1"
   s.required_ruby_version = '>= 3.0.0'
   s.summary = "Red Fairy 🧧"
   s.description = "Hide your secrets here..."
