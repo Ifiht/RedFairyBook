@@ -6,12 +6,11 @@ class RedFairy
     @path = "#{Dir.home}/.config/#{@book}/config.yml"
     if not Dir.exists?("#{Dir.home}/.config")
       Dir.mkdir("#{Dir.home}/.config")
+    end #if
+    if not Dir.exists?("#{Dir.home}/.config/#{@book}")
       Dir.mkdir("#{Dir.home}/.config/#{@book}")
-      File.new @path
-    elsif not Dir.exists?("#{Dir.home}/.config/#{@book}")
-      Dir.mkdir("#{Dir.home}/.config/#{@book}")
-      File.new @path
-    elsif not File.exists?(@path)
+    end #if
+    if not File.exists?(@path)
       File.new @path
     end #if
     begin
@@ -22,7 +21,7 @@ class RedFairy
     end #begin
   end #def
 
-  def self.exists?(key)
+  def self.has?(key)
     return @config_hash.has_key?(key)
   end #def
 
