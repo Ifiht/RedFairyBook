@@ -14,7 +14,8 @@ class RedFairy
       puts "created #{Dir.home}/.config/#{@book}"
     end #if
     if not File.exist?(@path)
-      File.new @path
+      db = File.new(@path, "w")
+      db.close
     end #if
     begin
       @config_hash = YAML.load(File.read(@path))
