@@ -1,7 +1,7 @@
-task :default => :build
+task default: [:build, :test]
 
 task :build do
-  gem build redfairy.gemspec
+  sh "gem build redfairy.gemspec"
 end #task
 
 task :test do
