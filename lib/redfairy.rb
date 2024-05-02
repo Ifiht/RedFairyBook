@@ -4,13 +4,16 @@ class RedFairy
   def initialize(book)
     @book = book
     @path = "#{Dir.home}/.config/#{@book}/config.yml"
-    if not Dir.exists?("#{Dir.home}/.config")
+    puts "begin checking dirs"
+    if not Dir.exist?("#{Dir.home}/.config")
       Dir.mkdir("#{Dir.home}/.config")
+      puts "created #{Dir.home}/.config"
     end #if
-    if not Dir.exists?("#{Dir.home}/.config/#{@book}")
+    if not Dir.exist?("#{Dir.home}/.config/#{@book}")
       Dir.mkdir("#{Dir.home}/.config/#{@book}")
+      puts "created #{Dir.home}/.config/#{@book}"
     end #if
-    if not File.exists?(@path)
+    if not File.exist?(@path)
       File.new @path
     end #if
     begin
@@ -26,7 +29,11 @@ class RedFairy
   end #def
 
   def self.get(key)
-    return @config_hash[key]
+    if self.has?(key)
+      return @config_hash[key]
+    else
+      return nil
+    end
   end #def
 
   def self.set(key, value)
