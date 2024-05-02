@@ -15,5 +15,10 @@ class TestNewDb < Test::Unit::TestCase
     assert_true(rf.has?("knight"))
     assert_equal(rf.get("knight"), "shining")
   end
- 
+
+  def test_nokey
+    rf = RedFairy.new("game")
+    assert_equal(rf.get("life"), nil)
+  end
+
 end

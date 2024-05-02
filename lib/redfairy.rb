@@ -28,7 +28,7 @@ class RedFairy
   end #def
 
   def get(key)
-    if @config_hash.has_key(key)
+    if @config_hash.has_key?(key)
       return @config_hash[key]
     else
       return nil
