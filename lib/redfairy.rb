@@ -23,24 +23,24 @@ class RedFairy
     end #begin
   end #def
 
-  def self.has?(key)
+  def has?(key)
     return @config_hash.has_key?(key)
   end #def
 
-  def self.get(key)
-    if self.has?(key)
+  def get(key)
+    if @config_hash.has_key(key)
       return @config_hash[key]
     else
       return nil
     end
   end #def
 
-  def self.set(key, value)
+  def set(key, value)
     @config_hash[key] = value
     return @config_hash[key]
   end #def
 
-  def self.save
+  def save
     File.open(@path, 'w') { |f| f.write(YAML.dump(@config_hash)) }
     return @config_hash
   end #def
