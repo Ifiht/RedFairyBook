@@ -1,7 +1,7 @@
 Gem::Specification.new do |s|
   s.name = "redfairy"
-  s.version = "0.1.1"
-  s.required_ruby_version = '>= 3.0.0'
+  s.version = "0.1.2"
+  s.required_ruby_version = ">= 3.0.0"
   s.summary = "Red Fairy 🧧"
   s.description = "Hide your secrets here..."
   s.authors = ["Ifiht"]

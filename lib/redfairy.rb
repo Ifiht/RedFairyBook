@@ -4,7 +4,7 @@ class RedFairy
   def initialize(book)
     @book = book
     @config_hash = {}
-    @path = File.join(Dir.home, '.config', @book, 'config.yml')
+    @path = File.join(Dir.home, ".config", @book, "config.yml")
     if not Dir.exist?("#{Dir.home}/.config")
       Dir.mkdir("#{Dir.home}/.config")
       puts "created #{Dir.home}/.config"
@@ -41,7 +41,7 @@ class RedFairy
   end #def
 
   def save
-    File.open(@path, 'w') { |f| f.write(YAML.dump(@config_hash)) }
+    File.open(@path, "w") { |f| f.write(YAML.dump(@config_hash)) }
     return @config_hash
   end #def
 end #class

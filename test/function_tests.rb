@@ -1,12 +1,11 @@
 require "redfairy"
 require "test/unit"
- 
+
 class TestNewDb < Test::Unit::TestCase
- 
   def test_init
     rf = RedFairy.new("test")
     rf.save
-    assert_true(File.exists?("#{Dir.home}/.config/test/config.yml"))
+    assert_true(File.exists?(File.join(Dir.home, ".config", "test", "config.yml")))
   end
 
   def test_rw
@@ -20,5 +19,4 @@ class TestNewDb < Test::Unit::TestCase
     rf = RedFairy.new("game")
     assert_equal(rf.get("life"), nil)
   end
-
 end
