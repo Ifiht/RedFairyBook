@@ -15,9 +15,11 @@ class RedFairy
       puts "created #{Dir.home}/.config/#{@book}"
     end #if
     if not File.exist?(@path)
+      puts "create file"
       #File.open(@path, "w") { |f| f.write(YAML.dump(@config_hash)) }
       File.open(@path, "w") { |f| f.write(YAML.dump(@config_hash)) }
     end #if
+    puts "try YAML load"
     begin
       @config_hash = YAML.load(File.read(@path))
     rescue => e
