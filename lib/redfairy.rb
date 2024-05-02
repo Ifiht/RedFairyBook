@@ -3,7 +3,8 @@ require "yaml"
 class RedFairy
   def initialize(book)
     @book = book
-    @path = "#{Dir.home}/.config/#{@book}/config.yml"
+    @config_hash = {}
+    @path = File.join(Dir.home, '.config', @book, 'config.yml')
     puts "begin checking dirs"
     if not Dir.exist?("#{Dir.home}/.config")
       Dir.mkdir("#{Dir.home}/.config")
@@ -14,14 +15,13 @@ class RedFairy
       puts "created #{Dir.home}/.config/#{@book}"
     end #if
     if not File.exist?(@path)
-      db = File.new(@path, "w")
-      db.close
+      #File.open(@path, "w") { |f| f.write(YAML.dump(@config_hash)) }
+      File.open(@path, "w") { |f| f.write(YAML.dump(@config_hash)) }
     end #if
     begin
       @config_hash = YAML.load(File.read(@path))
-    rescue
-      @config_hash = {}
-      File.open(@path, 'w') { |f| f.write(YAML.dump(@config_hash)) }
+    rescue => e
+      puts e
     end #begin
   end #def
 
