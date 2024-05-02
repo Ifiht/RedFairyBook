@@ -2,11 +2,11 @@ task default: [:clean, :build, :install, :test]
 
 task :clean do
   spec = Gem::Specification::load("redfairy.gemspec")
-  if File.exists?("Gemfile.lock")
+  if File.exist?("Gemfile.lock")
     f = File.open("Gemfile.lock", "r")
     File.delete(f)
   end
-  if File.exists?("#{spec.name}-#{spec.version}.gem")
+  if File.exist?("#{spec.name}-#{spec.version}.gem")
     f = File.open("#{spec.name}-#{spec.version}.gem", "r")
     File.delete(f)
   end

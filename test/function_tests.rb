@@ -5,7 +5,7 @@ class TestNewDb < Test::Unit::TestCase
   def test_init
     rf = RedFairy.new("test")
     rf.save
-    assert_true(File.exists?(File.join(Dir.home, ".config", "test", "config.yml")))
+    assert_true(File.exist?(File.join(Dir.home, ".config", "test", "config.yml")))
   end
 
   def test_rw
