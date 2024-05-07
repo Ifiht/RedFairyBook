@@ -1,4 +1,5 @@
 ![xUnit Tests](https://github.com/Ifiht/RedFairyBook/actions/workflows/ruby.yml/badge.svg)
+![Formatting Check](https://github.com/Ifiht/RedFairyBook/actions/workflows/syntax.yml/badge.svg)
 
 <img src="https://raw.githubusercontent.com/Ifiht/RedFairyBook/main/resources/dhl2_rose_by_Rasgar.png" width="109" height="109">
 
